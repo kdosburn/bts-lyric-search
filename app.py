@@ -12,15 +12,15 @@ TEXT_FOLDER = "texts"
 files = sorted([f for f in os.listdir(TEXT_FOLDER) if f.endswith(".txt")])
 
 # Dictionary for pretty book titles
-BOOK_TITLES = {
-    "CARL_01.txt": "Dungeon Crawler Carl",
-    "CARL_02.txt": "Carl's Doomsday Scenario",
-    "CARL_03.txt": "The Dungeon Anarchist's Cookbook",
-    "CARL_04.txt": "The Gate of the Feral Gods",
-    "CARL_05.txt": "The Butcher's Masquerade",
-    "CARL_06.txt": "The Eye of the Bedlam Bride",
-    "CARL_07.txt": "This Inevitable Ruin",
-}
+# BOOK_TITLES = {
+#     "CARL_01.txt": "Dungeon Crawler Carl",
+#     "CARL_02.txt": "Carl's Doomsday Scenario",
+#     "CARL_03.txt": "The Dungeon Anarchist's Cookbook",
+#     "CARL_04.txt": "The Gate of the Feral Gods",
+#     "CARL_05.txt": "The Butcher's Masquerade",
+#     "CARL_06.txt": "The Eye of the Bedlam Bride",
+#     "CARL_07.txt": "This Inevitable Ruin",
+# }
 
 def normalize_text(s: str) -> str:
     """Normalize Unicode so smart quotes and dashes don't break search."""
@@ -66,10 +66,10 @@ def search_texts(query, window=200):
 
 # --- Streamlit UI ---
 
-st.title("Dungeon Crawler Carl Crawler")
+st.title("BTS Lyric Search")
 st.markdown(
-    "### All text credit goes to the brilliant "
-    "[Matt Dinniman](https://mattdinniman.com/)",
+    "### All credit goes to BTS and the brilliant "
+    "[Army Project 529](https://www.armyproject529.com/)",
     unsafe_allow_html=False
 )
 
