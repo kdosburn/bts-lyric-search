@@ -12,15 +12,69 @@ TEXT_FOLDER = "texts"
 files = sorted([f for f in os.listdir(TEXT_FOLDER) if f.endswith(".txt")])
 
 # Dictionary for pretty book titles
-# BOOK_TITLES = {
-#     "CARL_01.txt": "Dungeon Crawler Carl",
-#     "CARL_02.txt": "Carl's Doomsday Scenario",
-#     "CARL_03.txt": "The Dungeon Anarchist's Cookbook",
-#     "CARL_04.txt": "The Gate of the Feral Gods",
-#     "CARL_05.txt": "The Butcher's Masquerade",
-#     "CARL_06.txt": "The Eye of the Bedlam Bride",
-#     "CARL_07.txt": "This Inevitable Ruin",
-# }
+SONG_TITLES = {
+    "BTS_ARIRANG_English_01.txt": "ARIRANG (English) 01",
+    "BTS_ARIRANG_English_02.txt": "ARIRANG (English) 02",
+    "BTS_ARIRANG_English_03.txt": "ARIRANG (English) 03",
+    "BTS_ARIRANG_English_04.txt": "ARIRANG (English) 04",
+    "BTS_ARIRANG_English_05.txt": "ARIRANG (English) 05",
+    "BTS_ARIRANG_English_06.txt": "ARIRANG (English) 06",
+    "BTS_ARIRANG_English_07.txt": "ARIRANG (English) 07",
+    "BTS_ARIRANG_English_08.txt": "ARIRANG (English) 08",
+    "BTS_ARIRANG_English_09.txt": "ARIRANG (English) 09",
+    "BTS_ARIRANG_English_10.txt": "ARIRANG (English) 10",
+    "BTS_ARIRANG_English_11.txt": "ARIRANG (English) 11",
+    "BTS_ARIRANG_English_12.txt": "ARIRANG (English) 12",
+    "BTS_ARIRANG_English_13.txt": "ARIRANG (English) 13",
+    "BTS_ARIRANG_English_14.txt": "ARIRANG (English) 14",
+    "BTS_ARIRANG_English_15.txt": "ARIRANG (English) 15",
+    "BTS_ARIRANG_Original_01.txt": "ARIRANG (Original) 01",
+    "BTS_ARIRANG_Original_02.txt": "ARIRANG (Original) 02",
+    "BTS_ARIRANG_Original_03.txt": "ARIRANG (Original) 03",
+    "BTS_ARIRANG_Original_04.txt": "ARIRANG (Original) 04",
+    "BTS_ARIRANG_Original_05.txt": "ARIRANG (Original) 05",
+    "BTS_ARIRANG_Original_06.txt": "ARIRANG (Original) 06",
+    "BTS_ARIRANG_Original_07.txt": "ARIRANG (Original) 07",
+    "BTS_ARIRANG_Original_08.txt": "ARIRANG (Original) 08",
+    "BTS_ARIRANG_Original_09.txt": "ARIRANG (Original) 09",
+    "BTS_ARIRANG_Original_10.txt": "ARIRANG (Original) 10",
+    "BTS_ARIRANG_Original_11.txt": "ARIRANG (Original) 11",
+    "BTS_ARIRANG_Original_12.txt": "ARIRANG (Original) 12",
+    "BTS_ARIRANG_Original_13.txt": "ARIRANG (Original) 13",
+    "BTS_ARIRANG_Original_14.txt": "ARIRANG (Original) 14",
+    "BTS_ARIRANG_Original_15.txt": "ARIRANG (Original) 15",
+    "BTS_Wings_English_01.txt": "Wings (English) 01",
+    "BTS_Wings_English_02.txt": "Wings (English) 02",
+    "BTS_Wings_English_03.txt": "Wings (English) 03",
+    "BTS_Wings_English_04.txt": "Wings (English) 04",
+    "BTS_Wings_English_05.txt": "Wings (English) 05",
+    "BTS_Wings_English_06.txt": "Wings (English) 06",
+    "BTS_Wings_English_07.txt": "Wings (English) 07",
+    "BTS_Wings_English_08.txt": "Wings (English) 08",
+    "BTS_Wings_English_09.txt": "Wings (English) 09",
+    "BTS_Wings_English_10.txt": "Wings (English) 10",
+    "BTS_Wings_English_11.txt": "Wings (English) 11",
+    "BTS_Wings_English_12.txt": "Wings (English) 12",
+    "BTS_Wings_English_13.txt": "Wings (English) 13",
+    "BTS_Wings_English_14.txt": "Wings (English) 14",
+    "BTS_Wings_English_15.txt": "Wings (English) 15",
+    "BTS_Wings_Original_01.txt": "Wings (Original) 01",
+    "BTS_Wings_Original_02.txt": "Wings (Original) 02",
+    "BTS_Wings_Original_03.txt": "Wings (Original) 03",
+    "BTS_Wings_Original_04.txt": "Wings (Original) 04",
+    "BTS_Wings_Original_05.txt": "Wings (Original) 05",
+    "BTS_Wings_Original_06.txt": "Wings (Original) 06",
+    "BTS_Wings_Original_07.txt": "Wings (Original) 07",
+    "BTS_Wings_Original_08.txt": "Wings (Original) 08",
+    "BTS_Wings_Original_09.txt": "Wings (Original) 09",
+    "BTS_Wings_Original_10.txt": "Wings (Original) 10",
+    "BTS_Wings_Original_11.txt": "Wings (Original) 11",
+    "BTS_Wings_Original_12.txt": "Wings (Original) 12",
+    "BTS_Wings_Original_13.txt": "Wings (Original) 13",
+    "BTS_Wings_Original_14.txt": "Wings (Original) 14",
+    "BTS_Wings_Original_15.txt": "Wings (Original) 15",
+
+}
 
 def normalize_text(s: str) -> str:
     """Normalize Unicode so smart quotes and dashes don't break search."""
@@ -92,7 +146,7 @@ if run_search and search:
                 r"<mark>\1</mark>",
                 snippet,
             )
-            title = BOOK_TITLES.get(fname, fname)
+            title = SONG_TITLES.get(fname, fname)
             st.markdown(f"**{title}:**")
             st.markdown(f"…{highlighted}…", unsafe_allow_html=True)
             st.divider()
